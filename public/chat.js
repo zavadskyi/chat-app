@@ -45,7 +45,6 @@ const autoscroll = ()=>{
 }
 
 socket.on('message', msg => {
-  console.log(msg);
   const html = Mustache.render(messageTemplete, {
     username: msg.username,
     message: msg.text,
@@ -56,7 +55,7 @@ socket.on('message', msg => {
 });
 
 socket.on('roomData', ({room, users}) => {
-  console.log(users);
+  
   const html = Mustache.render(sidebarTemplete, {
     room,
     users
